@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -30,7 +30,7 @@ const routes: Routes = [
 },
 {
   path: 'dashboard', component: DashboardComponent, pathMatch: 'full'
-}
+},
 
 ];
 
