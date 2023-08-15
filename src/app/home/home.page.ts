@@ -8,31 +8,13 @@ import { SongService } from '../shared/song.service';
 })
 export class HomePage {
 
-  Songs: any = [];
+  status: boolean = false;
+  constructor() { }
 
-  constructor(
-    private songService: SongService
-  ) {
-  }
+  ngOnInit() {}
 
-  ngOnInit() { }
-
-  ionViewDidEnter() {
-    this.songService.getSongList().subscribe((res) => {
-      console.log(res)
-      this.Songs = res;
-    })
-  }
-
-  deleteSong(song: any, i:number) {
-    if (window.confirm('Do you want to delete user?')) {
-      this.songService.deleteSong(song._id)
-        .subscribe(() => {
-          this.Songs.splice(i, 1);
-          console.log('Song deleted!')
-        }
-        )
-    }
+  addToggle() {
+    this.status = !this.status;       
   }
 
 }
